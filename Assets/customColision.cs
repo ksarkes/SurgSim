@@ -17,16 +17,17 @@ public class customColision : MonoBehaviour {
 
     void OnCollisionStay(Collision col)
     {
-        Debug.Log("Collision motherfucker");
+        Debug.Log("Collision motherfucker " + col.collider.gameObject.name);
+        
         if (col.collider.gameObject.tag != "static")
-        {
+        {   /*
             foreach (ContactPoint point in col.contacts)
             {
                 otherObj = point.otherCollider.gameObject;
                 averageNormal += point.normal;
-            }
+            }*/
             Debug.Log("Collision detecting, adding force");
-            otherObj.GetComponent<Rigidbody>().AddRelativeForce(averageNormal);
+            //otherObj.GetComponent<Rigidbody>().AddRelativeForce(averageNormal);
         }
     }
 }
